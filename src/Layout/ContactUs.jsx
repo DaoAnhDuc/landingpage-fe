@@ -1,7 +1,7 @@
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-const ContactUs = () => {
+const ContactUs = ({id}) => {
   const [activeAddress, setActiveAddress] = useState(0);
   const data = [
     {
@@ -23,7 +23,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="py-20 bg-[#f5f5f5]">
+    <div  id={id} className="py-20 bg-[#f5f5f5]">
       <div className="container m-auto">
         <h2 className="text-3xl font-bold text-center">CONTACT US</h2>
         <p className="text-center mt-6 text-gray-500">Have question? Get in touch with us NOW</p>

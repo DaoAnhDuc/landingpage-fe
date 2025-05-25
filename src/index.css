@@ -18,3 +18,7 @@
 body{
   font-family: 'Roboto', "sans-serif";
 }
+
+html {
+  scroll-padding-top: 80px; /* chiều cao header của bạn */
+}

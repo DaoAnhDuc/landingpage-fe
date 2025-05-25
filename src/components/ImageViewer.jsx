@@ -12,7 +12,7 @@ export default function ImageViewer({ src }) {
   }, [src])
 
   return (
-    <div className="max-w-full flex flex-col items-center">
+    <div className="max-w-full flex flex-col items-center p-1" style={{border: '1px solid #dfdfdf'}}>
       <img src={src} alt="Preview" className="max-w-full max-h-[80vh] object-contain shadow-lg rounded" />
       <p className="mt-2 text-sm text-gray-600">
         Kích thước: {size.width} x {size.height} px

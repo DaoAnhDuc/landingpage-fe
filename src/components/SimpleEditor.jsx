@@ -1,7 +1,4 @@
-
-export default function SimpleEditor({value, editorRef}) {
-
-
+export default function SimpleEditor({ editorRef, onChange }) {
   const formatText = (command) => {
     document.execCommand(command, false);
     editorRef.current?.focus();
@@ -10,7 +7,10 @@ export default function SimpleEditor({value, editorRef}) {
   return (
     <div className="w-full p-2 border border-gray-300 rounded bg-white">
       {/* Toolbar */}
-      <div className="flex gap-2 mb-2">
+      <div className="flex gap-2 mb-1 text-sm">
+        <button onClick={() => formatText("removeFormat")} className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">
+          Normal
+        </button>
         <button onClick={() => formatText("bold")} className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded font-bold">
           B
         </button>
@@ -21,11 +21,16 @@ export default function SimpleEditor({value, editorRef}) {
           U
         </button>
       </div>
-
       {/* Editor */}
-      <div ref={editorRef} contentEditable className="min-h-24 border border-gray-300 rounded p-2 focus:outline-none" suppressContentEditableWarning>
-        {value}
-      </div>
+      <div
+        ref={editorRef}
+        contentEditable
+        className="min-h-24 border border-gray-300 rounded p-2 focus:outline-none"
+        suppressContentEditableWarning
+        onInput={() => {
+          if (onChange) onChange(editorRef.current.innerHTML);
+        }}
+      ></div>
     </div>
   );
 }
