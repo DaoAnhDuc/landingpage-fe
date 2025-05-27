@@ -26,6 +26,26 @@ const OutVisionModal = ({ isOpen, onClose, data, fetchData }) => {
     }));
   };
 
+  const onDelete = (index) => {
+    setNewData((prev) => ({
+      ...prev,
+      data: [...newData.data].filter((_, i) => i !== index),
+    }));
+  };
+
+  const onAdd = () => {
+    setNewData((prev) => ({
+      ...prev,
+      data: [
+        ...newData.data,
+        {
+          title: "",
+          description: "",
+        },
+      ],
+    }));
+  };
+
   const onUpdate = async () => {
     const res = await SERVER.API.put(`/api/our-vision`, newData);
     console.log(res);
@@ -68,18 +88,23 @@ const OutVisionModal = ({ isOpen, onClose, data, fetchData }) => {
         </div>
         <div className="grid grid-cols-3 gap-2 mt-6">
           {newData.data.map((i, index) => (
-            <OurVisionItem i={i} key={index} index={index} onChangeItem={onChangeItem} />
+            <OurVisionItem i={i} key={index} index={index} onChangeItem={onChangeItem} onDelete={onDelete} />
           ))}
+          <div>
+            <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={onAdd}>
+              Add new
+            </button>
+          </div>
         </div>
         <button className="py-2 w-full bg-[#08798b] text-white mt-4" onClick={onUpdate}>
-          Cập nhật
+          Update
         </button>
       </div>
     </div>
   );
 };
 
-const OurVisionItem = ({ i, index, onChangeItem }) => {
+const OurVisionItem = ({ i, index, onChangeItem, onDelete }) => {
   const editorRef = useRef(null);
   useEffect(() => {
     editorRef.current.innerHTML = i?.description;
@@ -104,6 +129,11 @@ const OurVisionItem = ({ i, index, onChangeItem }) => {
             onChangeItem(index, "description", v);
           }}
         />
+      </div>
+      <div className="flex justify-end mt-2">
+        <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => onDelete(index)}>
+          Delete
+        </button>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const AboutUs = ({isLogin, id}) => {
   };
 
   return (
-    <div  id={id} className="bg-[#07798b] mt-20 py-20" onDoubleClick={onDoubleClick}>
+    <div  id={id} className="bg-[#07798b] mt-0 py-20" onDoubleClick={onDoubleClick}>
       <div className="container m-auto flex gap-10">
         <div className="w-1/2">
           <img src={getLinkImage(data?.image)} className="w-full rounded-2xl" alt="" />

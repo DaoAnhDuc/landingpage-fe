@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ isLogin }) => {
   function scrollToSection(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -8,10 +8,13 @@ const Header = () => {
   return (
     <div className="flex sticky top-0 bg-white z-10">
       <div className="container flex items-center justify-between m-auto">
-        <img src="./logo-fit.png" className="h-20 p-2" alt="" />
+        <div className="flex items-end">
+          <img src="./logo-fit.png" className="h-20 p-2" alt="" />
+          {isLogin && <div className="text-black font-bold uppercase text-xl mb-1">Admin</div>}
+        </div>
         <div>
           <ul className="flex font-bold uppercase gap-10">
-            <li className="p-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <li className="p-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               Home
             </li>
             <li className="p-2 cursor-pointer" onClick={() => scrollToSection("AboutUs")}>

@@ -87,7 +87,7 @@ const CarouselModal = ({ isOpen, onClose, data, fetchData }) => {
           </div>
         </div>
         <button className="py-2 w-full bg-[#08798b] text-white mt-4" onClick={onUpdate}>
-          Cập nhật
+          Update
         </button>
       </div>
     </div>

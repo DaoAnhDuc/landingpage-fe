@@ -10,6 +10,8 @@ import Partner from "./Layout/Partner";
 import ProductList from "./Layout/ProductList";
 import LoginModal from "./Layout/LoginModal";
 import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 export const SERVER = {
   API: null,
   URL: "",
@@ -43,7 +45,7 @@ function App() {
   if (loading) return null;
   return (
     <div className="w-full">
-      <Header />
+      <Header  isLogin={isLogin} />
       <Carousel isLogin={isLogin} id="Carousel" />
       <AboutUs isLogin={isLogin} id="AboutUs" />
       <OutVision isLogin={isLogin} id="OutVision" />
@@ -52,6 +54,7 @@ function App() {
       <ContactUs isLogin={isLogin} id="ContactUs" />
       <Footer isLogin={isLogin} id="Footer" />
       <LoginModal isOpen={isOpen} onClose={() => setIsOpen(false)} setIsLogin={setIsLogin} />
+        <ToastContainer />
     </div>
   );
 }

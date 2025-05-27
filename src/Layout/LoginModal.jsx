@@ -1,7 +1,27 @@
-import React from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { SERVER } from "../App";
 
 export default function LoginModal({ isOpen, onClose, setIsLogin }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   if (!isOpen) return null;
+
+  const onLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await SERVER.API?.post("/api/login", { username, password });
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        setIsLogin(true);
+        onClose();
+      }
+    } catch (error) {
+      toast.error(error.message);
+      setIsLogin(false);
+      console.log(error);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0000008a] bg-opacity-50">
@@ -13,20 +33,24 @@ export default function LoginModal({ isOpen, onClose, setIsLogin }) {
         <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Tài khoản</label>
-            <input type="email" className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required />
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Mật khẩu</label>
-            <input type="password" className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-[#08798b] text-white py-2 rounded-md transition cursor-pointer"
-            onClick={() => {
-              setIsLogin(true);
-              onClose();
-            }}
-          >
+          <button className="w-full bg-[#08798b] text-white py-2 rounded-md transition cursor-pointer" onClick={onLogin}>
             Đăng nhập
           </button>
         </form>

@@ -78,7 +78,7 @@ const AboutUsModal = ({ isOpen, onClose, data, fetchData }) => {
           </div>
         </div>
         <button className="w-full mt-4 py-2 bg-[#08798b] text-white" onClick={onUpdate}>
-          Cập nhật
+          Update
         </button>
       </div>
     </div>
