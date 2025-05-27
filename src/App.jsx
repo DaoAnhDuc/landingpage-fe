@@ -19,7 +19,7 @@ export const getLinkImage = (data) => {
 };
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [loading, setloading] = useState(true);
   useEffect(() => {
     const SERVER_URL = localStorage.getItem("SERVER");
