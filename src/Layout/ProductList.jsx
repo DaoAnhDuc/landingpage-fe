@@ -30,7 +30,7 @@ const ProductList = ({ isLogin, id }) => {
   };
 
   return (
-    <div id={id} className="bg-[#07798b] mt-20 py-20">
+    <div id={id} className="bg-[var(--primary-color)] mt-20 py-20">
       <div className="container m-auto gap-10" onDoubleClick={onDoubleClick}>
         <div className="text-center text-white">
           <h2 className="text-3xl font-bold ">{data.title}</h2>

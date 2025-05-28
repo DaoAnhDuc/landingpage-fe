@@ -48,16 +48,16 @@ const Footer = ({ isLogin }) => {
           <div className="flex-1/3 flex flex-col gap-3">
             {data.address.map((i, index) => (
               <div className="flex items-center gap-4" key={index}>
-                <FontAwesomeIcon icon={faLocationDot} className="text-[#08798b] mb-6" />
+                <FontAwesomeIcon icon={faLocationDot} className="text-[#BA0000] mb-6" />
                 <span>{i}</span>
               </div>
             ))}
             <div className="flex items-center gap-4">
-              <FontAwesomeIcon icon={faEnvelope} className="text-[#08798b]" />
+              <FontAwesomeIcon icon={faEnvelope} className="text-[#BA0000]" />
               <span> {data.email}</span>
             </div>
             <div className="flex items-center gap-4 mt-4">
-              <FontAwesomeIcon icon={faPhoneSquare} className="text-[#08798b] text-5xl" />
+              <FontAwesomeIcon icon={faPhoneSquare} className="text-[#BA0000] text-5xl" />
               <span className="text-xl font-bold">{data.phone}</span>
             </div>
           </div>
@@ -69,10 +69,10 @@ const Footer = ({ isLogin }) => {
             <div className="font-bold text-lg uppercase">{data.title2}</div>
             <div className="mt-3 text-justify" dangerouslySetInnerHTML={{ __html: data.description2 }}></div>
             <div className="text-4xl flex gap-5 mt-4">
-              <FontAwesomeIcon icon={faFacebook} className="text-[#08798b]" />
-              <FontAwesomeIcon icon={faTwitter} className="text-[#08798b]" />
-              <FontAwesomeIcon icon={faInstagram} className="text-[#08798b]" />
-              <FontAwesomeIcon icon={faPinterest} className="text-[#08798b]" />
+              <FontAwesomeIcon icon={faFacebook} className="text-[#BA0000]" />
+              <FontAwesomeIcon icon={faTwitter} className="text-[#BA0000]" />
+              <FontAwesomeIcon icon={faInstagram} className="text-[#BA0000]" />
+              <FontAwesomeIcon icon={faPinterest} className="text-[#BA0000]" />
             </div>
           </div>
         </div>

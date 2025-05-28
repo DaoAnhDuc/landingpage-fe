@@ -50,13 +50,13 @@ const ContactUs = ({ isLogin, id }) => {
             >
               <h4 className="font-bold text-lg">{item.name}</h4>
               <p>
-                <FontAwesomeIcon icon={faLocationDot} className="text-[#08798b]" /> Address: {item.address}
+                <FontAwesomeIcon icon={faLocationDot} className="text-[#BA0000]" /> Address: {item.address}
               </p>
               <p>
-                <FontAwesomeIcon icon={faEnvelope} className="text-[#08798b]" /> Email: {item.email}
+                <FontAwesomeIcon icon={faEnvelope} className="text-[#BA0000]" /> Email: {item.email}
               </p>
               <p>
-                <FontAwesomeIcon icon={faPhone} className="text-[#08798b]" /> Hotline: {item.hotline} - Fax: {item.fax}
+                <FontAwesomeIcon icon={faPhone} className="text-[#BA0000]" /> Hotline: {item.hotline} - Fax: {item.fax}
               </p>
             </div>
           ))}
@@ -79,7 +79,7 @@ const ContactUs = ({ isLogin, id }) => {
               <input type="text" placeholder="Your email address" className="border border-gray-400 h-10 rounded-xs pl-3 focus:border-gray-950" />
               <textarea className="border border-gray-400 p-3" rows={6}></textarea>
               <div className="">
-                <button className="h-10 bg-[#07798b] text-white font-bold px-6 rounded">Send</button>
+                <button className="h-10 bg-[var(--primary-color)] text-white font-bold px-6 rounded">Send</button>
               </div>
             </div>
           </div>

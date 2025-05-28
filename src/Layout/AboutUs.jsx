@@ -30,15 +30,15 @@ const AboutUs = ({isLogin, id}) => {
   };
 
   return (
-    <div  id={id} className="bg-[#07798b] mt-0 py-20" onDoubleClick={onDoubleClick}>
+    <div  id={id} className="bg-[var(--primary-color)] mt-0 py-20" onDoubleClick={onDoubleClick}>
       <div className="container m-auto flex gap-10">
-        <div className="w-1/2">
-          <img src={getLinkImage(data?.image)} className="w-full rounded-2xl" alt="" />
-        </div>
         <div className="w-1/2 text-white">
           <h4 className="font-bold text-xl">{data?.title}</h4>
           <div className="w-10 h-1 bg-[#19b8cf] mt-2"></div>
           <div className="mt-6" dangerouslySetInnerHTML={{ __html: data?.description }}></div>
+        </div>
+        <div className="w-1/2">
+          <img src={getLinkImage(data?.image)} className="w-full rounded-2xl" alt="" />
         </div>
       </div>
       {data && isOpen && <AboutUsModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={data} fetchData={fetchData} />}

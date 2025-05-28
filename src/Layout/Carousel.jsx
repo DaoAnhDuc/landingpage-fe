@@ -66,16 +66,16 @@ export default function Carousel({ isLogin }) {
                   <h4 className="text-3xl text-white font-bold" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7);" }}>
                     {item.text1}
                   </h4>
-                  <div className="w-16 h-1 bg-[#07798b] m-auto mt-4 mb-10"></div>
+                  <div className="w-16 h-1 bg-[var(--primary-color)] m-auto mt-4 mb-10"></div>
                   <h2
-                    className="text-6xl mb-10 uppercase font-bold bg-gradient-to-r from-[#75e7f8] to-[#00c4cc] text-transparent bg-clip-text animate-fade-in"
+                    className="text-6xl mb-10 uppercase font-bold bg-gradient-to-r from-[#BA0000] to-[#BA000080] text-transparent bg-clip-text animate-fade-in"
                     style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7);" }}
                   >
                     {item.text2}
                   </h2>
                   <div className="text-white" dangerouslySetInnerHTML={{ __html: item.text3 }}></div>{" "}
                   <a href="">
-                    <button className="bg-[#07798b] cursor-pointer text-white mt-[10px] lg:mt-7 px-[25px] py-[10px]  rounded-[5px] uppercase hover:text-[#07798b] hover:bg-white transition-all">
+                    <button className="bg-[var(--primary-color)] cursor-pointer text-white mt-[10px] lg:mt-7 px-[25px] py-[10px]  rounded-[5px] uppercase hover:text-[var(--primary-color)] hover:bg-white transition-all">
                       Xem thêm<i className="fa-solid fa-angles-right text-f12 ml-[5px]"></i>
                     </button>
                   </a>

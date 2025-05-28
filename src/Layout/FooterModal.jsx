@@ -63,7 +63,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
         <button className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 cursor-pointer" onClick={onClose}>
           ✕
         </button>
-        <h2 className="text-2xl font-semibold text-center mb-6 text-[#08798b]">FOOTER</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6 text-[#BA0000]">FOOTER</h2>
         <div className="grid grid-cols-3 gap-4">
           <div className="flex flex-col gap-2">
             <div>
@@ -71,7 +71,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
               {newData.address.map((i, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <input
-                    className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+                    className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
                     value={i}
                     onChange={(e) => {
                       onChangeAddressItem(index, e.target.value);
@@ -93,7 +93,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
             <div>
               <div className="font-bold">Email</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
                 value={newData?.email}
                 onChange={(e) => onChange("email", e.target.value)}
               />
@@ -101,7 +101,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
             <div>
               <div className="font-bold">Phone</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
                 value={newData?.phone}
                 onChange={(e) => onChange("phone", e.target.value)}
               />
@@ -111,7 +111,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
             <div>
               <div className="font-bold">Title</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
                 value={newData?.title1}
                 onChange={(e) => onChange("title1", e.target.value)}
               />
@@ -130,7 +130,7 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
             <div>
               <div className="font-bold">Title</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
                 value={newData?.title2}
                 onChange={(e) => onChange("title2", e.target.value)}
               />
@@ -149,12 +149,12 @@ const FooterModal = ({ isOpen, onClose, data, fetchData }) => {
         <div className="mt-2">
           <div className="font-bold">Copyright</div>
           <input
-            className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#08798b] border-gray-400 focus:outline-none"
+            className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
             value={newData?.copyright}
             onChange={(e) => onChange("copyright", e.target.value)}
           />
         </div>
-        <button className="py-2 w-full bg-[#08798b] text-white mt-4" onClick={onUpdate}>
+        <button className="py-2 w-full bg-[#BA0000] text-white mt-4" onClick={onUpdate}>
           Update
         </button>
       </div>
