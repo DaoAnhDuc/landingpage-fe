@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "swiper/css";
+import 'swiper/css/autoplay';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getLinkImage, SERVER } from "../App";
 import CarouselModal from "./CarouselModal";
@@ -37,14 +38,17 @@ export default function Carousel({ isLogin }) {
   };
   if (data.length === 0) return null;
   return (
-    <div className="relative w-full mb-20">
+    <div className="relative w-full lg:mb-20 md:mb-6 mb-2">
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
         pagination={{ clickable: true }}
         navigation={true}
-        autoplay={{ delay: 3000 }}
+        autoplay={{
+          delay: 3000, // 3 seconds
+          disableOnInteraction: false, // continues autoplay after interaction
+        }}
         loop={true}
         className="overflow-hidden"
       >
@@ -57,28 +61,35 @@ export default function Carousel({ isLogin }) {
               backgroundImage: "",
               width: "100%",
               height,
+              minHeight: 240,
             }}
           >
-            <img src={getLinkImage(item.background)} alt={`Slide ${idx + 1}`} className="w-full object-cover select-none" />
+            <img src={getLinkImage(item.background)} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover select-none" />
             <div className="absolute inset-0 flex justify-center items-center z-10" style={{ background: "rgba(0, 0, 0, 0.4)" }}>
               <div className="container mx-auto px-3 text-center">
                 <div className="w-full text-banner">
-                  <h4 className="text-3xl text-white font-bold" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7);" }}>
+                  <h4
+                    data-aos="fade-up"
+                    className="lg:text-3xl md:text-xl text-base text-white font-bold"
+                    style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7);" }}
+                  >
                     {item.text1}
                   </h4>
-                  <div className="w-16 h-1 bg-[var(--primary-color)] m-auto mt-4 mb-10"></div>
+                  <div className="md:block hidden w-16 h-1 bg-[var(--primary-color)] m-auto lg:mt-4 lg:mb-10 mt-2 mb-6 "></div>
                   <h2
-                    className="text-6xl mb-10 uppercase font-bold bg-gradient-to-r from-[#BA0000] to-[#BA000080] text-transparent bg-clip-text animate-fade-in"
+                    data-aos="fade-up"
+                    className="lg:text-6xl md:text-4xl text-base lg:mb-10 md:mb-5 uppercase font-bold animate-gradient bg-gradient-to-r from-orange-500 via-[var(--primary-color)] to-blue-500 bg-clip-text text-transparent"
                     style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7);" }}
                   >
                     {item.text2}
                   </h2>
-                  <div className="text-white" dangerouslySetInnerHTML={{ __html: item.text3 }}></div>{" "}
-                  <a href="">
-                    <button className="bg-[var(--primary-color)] cursor-pointer text-white mt-[10px] lg:mt-7 px-[25px] py-[10px]  rounded-[5px] uppercase hover:text-[var(--primary-color)] hover:bg-white transition-all">
-                      Xem thêm<i className="fa-solid fa-angles-right text-f12 ml-[5px]"></i>
-                    </button>
-                  </a>
+                  <div data-aos="fade-up" className="text-white md:text-base text-xs" dangerouslySetInnerHTML={{ __html: item.text3 }}></div>{" "}
+                  <button
+                    data-aos="fade-up"
+                    className="bg-[var(--primary-color)] text-white md:px-4 md:py-2 px-2 py-1 md:mt-6 mt-2 rounded transition-all md:text-base text-sm"
+                  >
+                    Xem thêm
+                  </button>
                 </div>
               </div>
             </div>

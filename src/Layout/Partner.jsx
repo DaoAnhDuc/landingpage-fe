@@ -27,8 +27,8 @@ const Partner = ({ isLogin, id }) => {
   };
 
   return (
-    <div id={id} className="pt-30 pb-10  bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
-      <div className="container m-auto select-none">
+    <div id={id} className="lg:pt-30 pt-10 lg:pb-10 pb-0  bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
+      <div data-aos="fade-down" className="container m-auto select-none lg:block hidden">
         <Swiper
           spaceBetween={16}
           slidesPerView={"auto"}
@@ -37,11 +37,18 @@ const Partner = ({ isLogin, id }) => {
           className="flex w-full overflow-x-auto whitespace-nowrap gap-3"
         >
           {data.map((src, index) => (
-            <SwiperSlide key={index} className="rounded-lg overflow-hidden max-w-60 max-h-20 w-fit">
+            <SwiperSlide  key={index} className="rounded-lg overflow-hidden max-w-60 max-h-20 w-fit">
               <img src={getLinkImage(src)} alt={`Image ${index}`} className="max-w-60 max-h-20 object-contain mx-auto" />
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="lg:hidden grid grid-cols-2 px-4 gap-4">
+        {data.map((src, index) => (
+          <div key={index} className="rounded-lg overflow-hidden w-full max-h-16">
+            <img src={getLinkImage(src)} alt={`Image ${index}`} className="w-full h-full object-contain mx-auto" />
+          </div>
+        ))}
       </div>
       {isOpen && <PartnerModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={data} fetchData={fetchData} />}
     </div>

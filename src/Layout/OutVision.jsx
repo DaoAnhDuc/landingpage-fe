@@ -30,15 +30,15 @@ const OutVision = ({ isLogin, id }) => {
   };
 
   return (
-    <div id={id} className="py-20 bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
-      <div className="container m-auto">
-        <h2 className="text-3xl font-bold text-center">{data.title}</h2>
-        <div className="text-center mt-6 text-gray-500" dangerouslySetInnerHTML={{__html: data.description}}>
-         
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4 bg-gray-100 mt-10">
+    <div id={id} className="lg:py-20 py-10 bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
+      <div className="container m-auto px-4">
+        <h2 data-aos="fade-up" className="text-3xl font-bold text-center">
+          {data.title}
+        </h2>
+        <div data-aos="fade-up" className="text-center mt-6 text-gray-500" dangerouslySetInnerHTML={{ __html: data.description }}></div>
+        <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-4 bg-gray-100 lg:mt-10 mt-4">
           {data.data.map((item, index) => (
-            <div key={index} className="bg-white  p-10 rounded-xl" style={{ boxShadow: "0 10px 30px rgba(0,0,0,.06)" }}>
+            <div data-aos="fade-up" key={index} className="bg-white lg:p-10 p-4 rounded-xl" style={{ boxShadow: "0 10px 30px rgba(0,0,0,.06)" }}>
               <div>
                 <img className="m-auto" src="./icondone1.png" alt="" />
               </div>

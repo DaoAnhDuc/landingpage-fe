@@ -22,3 +22,11 @@ body{
 html {
   scroll-padding-top: 80px; /* chiều cao header của bạn */
 }
+
+.bg-product-list::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* lớp phủ tối */
+  z-index: -1;
+}

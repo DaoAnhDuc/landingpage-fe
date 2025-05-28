@@ -15,7 +15,7 @@ const Footer = ({ isLogin }) => {
     description1: "",
     title2: "",
     description2: "",
-    copyright: ''
+    copyright: "",
   });
 
   useEffect(() => {
@@ -44,8 +44,8 @@ const Footer = ({ isLogin }) => {
         className="text-white bg-center"
         style={{ backgroundImage: 'linear-gradient(to right,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("./footer.png")' }}
       >
-        <div className="container m-auto py-10 flex gap-5">
-          <div className="flex-1/3 flex flex-col gap-3">
+        <div className="container grid lg:grid-cols-3 grid-cols-1 m-auto py-10 gap-5 px-4">
+          <div data-aos="fade-right" className=" flex flex-col gap-3">
             {data.address.map((i, index) => (
               <div className="flex items-center gap-4" key={index}>
                 <FontAwesomeIcon icon={faLocationDot} className="text-[#BA0000] mb-6" />
@@ -61,11 +61,11 @@ const Footer = ({ isLogin }) => {
               <span className="text-xl font-bold">{data.phone}</span>
             </div>
           </div>
-          <div className="flex-1/3">
+          <div  data-aos="fade-down" className="">
             <div className="font-bold text-lg uppercase">{data.title1}</div>
             <div className="mt-3 text-justify" dangerouslySetInnerHTML={{ __html: data.description1 }}></div>
           </div>
-          <div className="flex-1/3">
+          <div data-aos="fade-left" className="">
             <div className="font-bold text-lg uppercase">{data.title2}</div>
             <div className="mt-3 text-justify" dangerouslySetInnerHTML={{ __html: data.description2 }}></div>
             <div className="text-4xl flex gap-5 mt-4">

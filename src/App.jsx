@@ -10,7 +10,11 @@ import Partner from "./Layout/Partner";
 import ProductList from "./Layout/ProductList";
 import LoginModal from "./Layout/LoginModal";
 import axios from "axios";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 import { ToastContainer } from "react-toastify";
 export const SERVER = {
   API: null,
@@ -45,16 +49,20 @@ function App() {
   if (loading) return null;
   return (
     <div className="w-full">
-      <Header  isLogin={isLogin} />
-      <Carousel isLogin={isLogin} id="Carousel" />
-      <AboutUs isLogin={isLogin} id="AboutUs" />
-      <OutVision isLogin={isLogin} id="OutVision" />
-      <ProductList isLogin={isLogin} id="ProductList" />
-      <Partner isLogin={isLogin} id="Partner" />
-      <ContactUs isLogin={isLogin} id="ContactUs" />
-      <Footer isLogin={isLogin} id="Footer" />
-      <LoginModal isOpen={isOpen} onClose={() => setIsOpen(false)} setIsLogin={setIsLogin} />
+      <header className="sticky top-0 z-50 bg-white shadow-md">
+        <Header isLogin={isLogin} />
+      </header>
+      <main className="bg-white">
+        <Carousel isLogin={isLogin} id="Carousel" />
+        <AboutUs isLogin={isLogin} id="AboutUs" />
+        <OutVision isLogin={isLogin} id="OutVision" />
+        <ProductList isLogin={isLogin} id="ProductList" />
+        <Partner isLogin={isLogin} id="Partner" />
+        <ContactUs isLogin={isLogin} id="ContactUs" />
+        <Footer isLogin={isLogin} id="Footer" />
+        <LoginModal isOpen={isOpen} onClose={() => setIsOpen(false)} setIsLogin={setIsLogin} />
         <ToastContainer />
+      </main>
     </div>
   );
 }

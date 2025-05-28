@@ -32,13 +32,16 @@ const ContactUs = ({ isLogin, id }) => {
   };
 
   return (
-    <div id={id} className="py-20 bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
+    <div id={id} className="lg:py-20 py-10 bg-[#f5f5f5]" onDoubleClick={onDoubleClick}>
       <div className="container m-auto">
-        <h2 className="text-3xl font-bold text-center">{data.title}</h2>
-        <div className="text-center mt-6 text-gray-500" dangerouslySetInnerHTML={{ __html: data.description }}></div>
-        <div className="grid grid-cols-2 gap-6 mt-10">
+        <h2 data-aos="fade-down" className="text-3xl font-bold text-center">
+          {data.title}
+        </h2>
+        <div data-aos="fade-down" className="text-center mt-6 text-gray-500" dangerouslySetInnerHTML={{ __html: data.description }}></div>
+        <div data-aos="fade-down" className="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-10 p-4">
           {data.data.map((item, index) => (
             <div
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               className="p-10 rounded-xl flex flex-col gap-3"
               key={item.name}
               onClick={() => setActiveAddress(index)}
@@ -61,8 +64,8 @@ const ContactUs = ({ isLogin, id }) => {
             </div>
           ))}
         </div>
-        <div className="flex gap-6 mt-10">
-          <div className="flex-2/3">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-10 p-4">
+          <div data-aos="fade-right" className="lg:col-span-2 col-span-1">
             <iframe
               src={data.data[activeAddress]?.link}
               width="100%"
@@ -72,7 +75,7 @@ const ContactUs = ({ isLogin, id }) => {
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <div className="flex-1/3">
+          <div data-aos="fade-left" className="w-full">
             <div className=" flex flex-col gap-2">
               <input type="text" placeholder="Your name" className="border border-gray-400 h-10 rounded-xs pl-3 focus:border-gray-950" />
               <input type="text" placeholder="Your Numbers" className="border border-gray-400 h-10 rounded-xs pl-3 focus:border-gray-950" />
