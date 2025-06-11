@@ -46,7 +46,7 @@ const ProductList = ({ isLogin, id }) => {
         </div>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 mt-10">
           {data.data.map((item, index) => (
-            <div data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} className=" bg-white p-8 rounded-3xl" key={index}>
+            <div data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} className=" bg-white p-8 rounded-3xl  cursor-pointer hover:-translate-y-2" key={index}>
               <div className="flex items-center gap-3" >
                 <img src="./productdone.png" className="h-12" alt="" />
                 <h3 className="text-xl font-bold my-4 border-b-4 border-[var(--primary-color)] w-fit pb-2 px-2">{item.title}</h3>
