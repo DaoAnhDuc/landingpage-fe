@@ -9,6 +9,7 @@ import OutVision from "./Layout/OutVision";
 import Partner from "./Layout/Partner";
 import ProductList from "./Layout/ProductList";
 import LoginModal from "./Layout/LoginModal";
+import GioiThieu from "./Layout/GioiThieu";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
@@ -54,7 +55,8 @@ function App() {
       </header>
       <main className="bg-white">
         <Carousel isLogin={isLogin} id="Carousel" />
-        <AboutUs isLogin={isLogin} id="AboutUs" />
+        {/* <AboutUs isLogin={isLogin} id="AboutUs" /> */}
+        <GioiThieu isLogin={isLogin} id="AboutUs" />
         <OutVision isLogin={isLogin} id="OutVision" />
         <ProductList isLogin={isLogin} id="ProductList" />
         <Partner isLogin={isLogin} id="Partner" />

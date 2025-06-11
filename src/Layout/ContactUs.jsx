@@ -53,13 +53,13 @@ const ContactUs = ({ isLogin, id }) => {
             >
               <h4 className="font-bold text-lg">{item.name}</h4>
               <p>
-                <FontAwesomeIcon icon={faLocationDot} className="text-[#BA0000]" /> Address: {item.address}
+                <FontAwesomeIcon icon={faLocationDot} className="text-[var(--primary-color)]" /> Address: {item.address}
               </p>
               <p>
-                <FontAwesomeIcon icon={faEnvelope} className="text-[#BA0000]" /> Email: {item.email}
+                <FontAwesomeIcon icon={faEnvelope} className="text-[var(--primary-color)]" /> Email: {item.email}
               </p>
               <p>
-                <FontAwesomeIcon icon={faPhone} className="text-[#BA0000]" /> Hotline: {item.hotline} - Fax: {item.fax}
+                <FontAwesomeIcon icon={faPhone} className="text-[var(--primary-color)]" /> Hotline: {item.hotline} - Fax: {item.fax}
               </p>
             </div>
           ))}

@@ -40,7 +40,7 @@ const Header = ({ isLogin }) => {
           </ul>
           <div className="lg:hidden block">
             <button className="cursor-pointer px-2 py-2" onClick={() => setOpen(!open)}>
-              <FontAwesomeIcon icon={faBars} className="text-[#BA0000] text-2xl" />
+              <FontAwesomeIcon icon={faBars} className="text-[var(--primary-color)] text-2xl" />
             </button>
           </div>
           {open && (

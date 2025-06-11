@@ -47,7 +47,7 @@ const PartnerModal = ({ isOpen, onClose, data, fetchData }) => {
           ✕
         </button>
         <button
-          className="cursor-pointer flex items-center text-white py-1 px-2 gap-1 rounded-sm bg-[#BA0000] mb-4"
+          className="cursor-pointer flex items-center text-white py-1 px-2 gap-1 rounded-sm bg-[var(--primary-color)] mb-4"
           title="Add partner"
           onClick={() => onInsertFile(0)}
         >
@@ -61,7 +61,7 @@ const PartnerModal = ({ isOpen, onClose, data, fetchData }) => {
                 <button className="cursor-pointer w-7 h-7 rounded-sm bg-red-500 " title="Delete partner" onClick={() => onDeleteFile(index)}>
                   <FontAwesomeIcon icon={faTrashAlt} className="text-white" />
                 </button>
-                <button className="cursor-pointer w-7 h-7 rounded-sm bg-[#BA0000]" title="Add partner" onClick={() => onInsertFile(index)}>
+                <button className="cursor-pointer w-7 h-7 rounded-sm bg-[var(--primary-color)]" title="Add partner" onClick={() => onInsertFile(index)}>
                   <FontAwesomeIcon icon={faPlusCircle} className="text-white" />
                 </button>
               </div>

@@ -70,13 +70,13 @@ const ContactUsModal = ({ isOpen, onClose, data, fetchData }) => {
         <button className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 cursor-pointer" onClick={onClose}>
           ✕
         </button>
-        <h2 className="text-2xl font-semibold text-center mb-6 text-[#BA0000]">{data.title}</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6 text-[var(--primary-color)]">{data.title}</h2>
         <div className="flex gap-10">
           <div className="flex-1/2 flex flex-col gap-4">
             <div>
               <div className="font-bold">Title</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
                 value={newData?.title}
                 onChange={(e) => onChange("title", e.target.value)}
               />
@@ -102,7 +102,7 @@ const ContactUsModal = ({ isOpen, onClose, data, fetchData }) => {
             </button>
           </div>
         </div>
-        <button className="py-2 w-full bg-[#BA0000] text-white mt-4" onClick={onUpdate}>
+        <button className="py-2 w-full bg-[var(--primary-color)] text-white mt-4" onClick={onUpdate}>
           Update
         </button>
       </div>
@@ -116,7 +116,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">Name</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.name}
           onChange={(e) => onChangeItem(index, "name", e.target.value)}
         />
@@ -124,7 +124,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">Address</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.address}
           onChange={(e) => onChangeItem(index, "address", e.target.value)}
         />
@@ -132,7 +132,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">Email</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.email}
           onChange={(e) => onChangeItem(index, "email", e.target.value)}
         />
@@ -140,7 +140,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">Hotline</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.hotline}
           onChange={(e) => onChangeItem(index, "hotline", e.target.value)}
         />
@@ -148,7 +148,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">Fax</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.fax}
           onChange={(e) => onChangeItem(index, "fax", e.target.value)}
         />
@@ -156,7 +156,7 @@ const ProductListItem = ({ i, index, onChangeItem, onDeleteAddress }) => {
       <div>
         <div className="font-bold">GoogleMap Share Link</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.link}
           onChange={(e) => onChangeItem(index, "link", e.target.value)}
         />

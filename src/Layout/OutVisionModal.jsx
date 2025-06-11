@@ -64,13 +64,13 @@ const OutVisionModal = ({ isOpen, onClose, data, fetchData }) => {
         <button className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 cursor-pointer" onClick={onClose}>
           ✕
         </button>
-        <h2 className="text-2xl font-semibold text-center mb-6 text-[#BA0000]">{data.title}</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6 text-[var(--primary-color)]">{data.title}</h2>
         <div className="flex gap-10">
           <div className="flex-1/2 flex flex-col gap-4">
             <div>
               <div className="font-bold">Title</div>
               <input
-                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+                className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
                 value={newData?.title}
                 onChange={(e) => onChange("title", e.target.value)}
               />
@@ -96,7 +96,7 @@ const OutVisionModal = ({ isOpen, onClose, data, fetchData }) => {
             </button>
           </div>
         </div>
-        <button className="py-2 w-full bg-[#BA0000] text-white mt-4" onClick={onUpdate}>
+        <button className="py-2 w-full bg-[var(--primary-color)] text-white mt-4" onClick={onUpdate}>
           Update
         </button>
       </div>
@@ -116,7 +116,7 @@ const OurVisionItem = ({ i, index, onChangeItem, onDelete }) => {
       <div>
         <div className="font-bold">Title</div>
         <input
-          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[#BA0000] border-gray-400 focus:outline-none"
+          className="mt-1 w-full px-4 py-2 border rounded-md focus:border-[var(--primary-color)] border-gray-400 focus:outline-none"
           value={i?.title}
           onChange={(e) => onChangeItem(index, "title", e.target.value)}
         />
