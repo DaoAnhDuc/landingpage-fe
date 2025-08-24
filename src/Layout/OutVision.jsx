@@ -44,7 +44,7 @@ const OutVision = ({ isLogin, id }) => {
               </div>
               <div className="text-center">
                 <h2 className="text-lg font-bold my-6">{item.title}</h2>
-                <p className="mt-4">{item.description}</p>
+                <div className="mt-4" dangerouslySetInnerHTML={{__html: item.description}}></div>
               </div>
             </div>
           ))}

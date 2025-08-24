@@ -38,15 +38,15 @@ const Partner = ({ isLogin, id }) => {
         >
           {data.map((src, index) => (
             <SwiperSlide  key={index} className="rounded overflow-hidden w-fit max-w-60 h-20 border border-[var(--primary-color)] p-2 box-border">
-              <img src={getLinkImage(src)} alt={`Image ${index}`} className="w-full h-full object-contain mx-auto" />
+              <img src={getLinkImage(src)} alt={`Image ${index}`} className="w-full h-16 object-contain mx-auto" />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
       <div className="lg:hidden grid grid-cols-2 px-4 gap-4">
         {data.map((src, index) => (
-          <div key={index} className="rounded-lg overflow-hidden w-full max-h-16">
-            <img src={getLinkImage(src)} alt={`Image ${index}`} className="w-full h-full object-contain mx-auto" />
+          <div key={index} className="rounded-lg overflow-hidden w-full max-h-16 border border-[var(--primary-color)]">
+            <img src={getLinkImage(src)} alt={`Image ${index}`} className="w-full h-16 object-contain mx-auto" />
           </div>
         ))}
       </div>

@@ -1,8 +1,8 @@
 import { Input } from "antd";
 import { useEffect, useRef, useState } from "react";
-import SimpleEditor from "../components/SimpleEditor";
 import { toast } from "react-toastify";
 import { SERVER } from "../App";
+import SimpleEditor from "../components/SimpleEditor";
 const GioiThieuModal = ({ isOpen, onClose, data, fetchData }) => {
   const [formData, setFormData] = useState({
     ...data,
